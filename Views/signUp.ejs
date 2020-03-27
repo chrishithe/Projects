@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="one">
+
+            <h1>Create An Account</h1>
+
+            <form method="POST" action="/signUp">
+                <table>
+                    <tr>
+                        <td>First Name</td>
+                        <td><input class="textbox" type="text" placeholder="First Name" name="firstName"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input class="textbox" type="text" placeholder="Last Name" name="lastName"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email</label></td>
+                        <td><input name="email" type="email" placeholder="Enter-email" spellcheck="false"></td>
+                        <td><small id="emailing"></small></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                        <td><input name="password" type="password" placeholder="Password"></td>
+                        <td><small id="wsk"></small></td>
+                    </tr>
+                    <tr>
+                    <td><button type="submit" value="signIn" class="btn btn-info" id="loginBtn">Sign Up</button></td>
+                </tr>
+
+                </table>
+                </form>
+        </div>
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

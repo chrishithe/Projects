@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+
+    <div class="oneTwo">
+            <div class="titleLog">
+                    <h1>Welcome To Crit Kickz Conventions</h1>
+                    <h5>Please enter your email and password to login.</h5>
+                </div>
+    <div class="containerTwo">
+    <div id='loginwrapper'>
+        <div class='bg-dark' id='login-form'>
+                <h1><%=qs.message1 %></h1>
+            <form method="POST" action="/login">
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" type="email" class="form-control" placeholder="Enter-email" spellcheck="false">
+                <small id="emailing"></small>
+            </div>
+                
+            <div class="form-group">
+                <label>Password</label>
+                <input name="password" type="password" class="form-control" placeholder="Password">
+                <small id="wsk"></small>    
+            </div>
+            <button type="submit" value="signIn" class="btn btn-info" id="loginBtn">Log In</button>
+        </form>
+        <h1><%=qs.message %></h1>
+        </div>
+    </div>
+    <div class="signUp">
+        <h1><a href="/signUp">No Account? Click Here to Sign Up</a></h1>
+    </div>
+</div>
+</div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

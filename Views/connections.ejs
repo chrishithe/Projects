@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conventions</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="one1">
+            <div class="container">
+                <div class="tablecontainer">
+                    <h1><%=conventions[0].location%></h1>
+                    <div class="headshot">
+                        <img src="<%=conventions[0].image%>" title="<%=conventions[0].host%>" alt="headshot">
+                    </div>
+                    <% for(var i=0; i < conventions.length;i++){ %>
+                    <% if(conventions[i].location === 'New York, New York') { %>
+                    <h2><a href="/connection?id=<%=conventions[i]._id%>"><%=conventions[i].name%></a></h2>
+                    <%  } %>
+                    <% } %>
+                    <div class="nike">
+                        <h1><%=conventions[3].location%></h1>
+                        <div class="headshot">
+                            <img src="<%=conventions[3].image%>" title="<%=conventions[3].host%>" alt="headshot">
+                        </div>
+                        <% for(var i=0; i < conventions.length;i++){ %>
+                        <% if(conventions[i].location === 'Charlotte, North Carolina') { %>
+                        <h2><a href="/connection?id=<%=conventions[i]._id%>"><%=conventions[i].name%></a></h2>
+                        <%  } %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connected</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="one">
+            <div class="container">
+                <div class="tablecontainer">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Host</th>
+                                <th scope="col">Convention Name</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">RSVP</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <% for(i=0; i < session.connections.length; i++){ %>
+                                <tr>
+                                    <td><%=session.connections[i].connection.host%></td>
+                                    <td><%=session.connections[i].connection.name%></td>
+                                    <td><%=session.connections[i].connection.location%></td>
+                                    <td><%=session.connections[i].connection.time%></td>
+                                    <td><%=session.connections[i].rsvp%></td>
+                                    <td><a href="/updateRSVP?id=<%=session.connections[i].connection.userId%>" class="btn btn-primary">Update</a></td>
+                                    <td><form method="POST" action="Delete">
+                                        <input value="<%=session.connections[i].connection.userId%>" type="hidden" name="Delete" class="btn btn-danger">
+                                        <input value="Delete" type="submit" class="btn btn-danger">
+                                    </form></td>
+                                </tr>
+                                <% } %>  
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

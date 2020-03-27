@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connected</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="one">
+            <div class="container">
+                <div class="tablecontainer">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Host</th>
+                                <th scope="col">Convention Name</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Time</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i < docs.length; i++){ %>
+                                <td><%= docs[i].host %></td>
+                                <td><%= docs[i].name %></td>
+                                <td><%= docs[i].location %></td>
+                                <td><%= docs[i].time %></td>
+                            
+                                    <td><form method="POST" action="/deleteSession">
+                                        <input type="hidden" value="<%= docs[i]._id %>" name="Delete" class="btn btn-danger">
+                                        <input value="Delete" type="submit" class="btn btn-danger">
+                                    </form></td>
+                                </tr>
+                                <% } %>  
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

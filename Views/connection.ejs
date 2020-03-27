@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sneaker Connection</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+
+    <div class="content">
+        <div class="one">
+            <div class="container">
+                <div class="tablecontainer">
+                    <h1><%=conventions.name %></h1> 
+                    <div class="tom">
+                        <img src="<%=conventions[0].image %>" title="Tom John" alt="headshot">
+                    </div>
+                    <table>
+                        <tr class="theader">
+                            <td>Host</td>
+                            <td>Convention Name</td>
+                            <td>Location</td>
+                            <td>Time</td>
+                            <td>Price</td>
+                            <td>RSVP</td>
+                            <td></td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><%=conventions[0].host %></td>
+                                <td><%=conventions[0].name %></td>
+                                <td><%=conventions[0].location %></td>
+                                <td><%=conventions[0].time %></td>
+                                <td><%=conventions[0].price %></td>
+                                <td>
+                                <form method="POST" action="/connect">
+                                    <input type="hidden" name="conventionId" value="<%=conventions[0].conventionId %>"/>
+                                    <input type="hidden" name="convention" value="<%=conventions[0].name %>"/>
+                                    <input type="hidden" name="host" value="<%=conventions[0].host %>"/>
+                                    <input type="hidden" name="location" value="<%=conventions[0].location %>"/>
+                                    <input type="hidden" name="time" value="<%=conventions[0].time %>"/>
+                                    <input value= "Connect" type= "submit" class="btn btn-primary"/>
+                                </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

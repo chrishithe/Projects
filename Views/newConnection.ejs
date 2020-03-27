@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="one">
+
+            <h1>New Convention</h1>
+
+            <form method="POST" action="/newConnection">
+                <table>
+                    <tr>
+                        <td>Host Name</td>
+                        <td><input class="textbox" type="text" placeholder="Host Name" name="host"></td>
+                    </tr>
+                    <tr>
+                        <td>Convention Name</td>
+                        <td><input class="textbox" type="text" placeholder="Name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td><select name="location">
+                            <option value="Charlotte, North Carolina">Charlotte, NC</option>
+                            <option value="New York, New York">New York, NY</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td><input class="textbox" type="text" placeholder="Time" name="time"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input class="textbox" type="text" placeholder="$$" name="price"></td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td><input class="textbox" type="date" name="date"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="textbox1" type="submit" value="Submit" /></td>
+                    </tr>
+
+                </table>
+                </form>
+        </div>
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>

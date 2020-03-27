@@ -1,0 +1,14 @@
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/newConnection">Start A Convention</a>
+    <a href="/connections">Convention Connections</a>
+    <a href="/mySessions">My Conventions</a>
+   
+    <% if(session.name){ %>
+        <a href="/userProfile">Connected</a>
+        <a href="/logOut">Log Out</a>
+    <% }else{ %>
+        <a href="/login">Log In</a>
+    <% } %>
+</div>
+

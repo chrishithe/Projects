@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="Assets/CSS/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/main.css">
+</head>
+
+<body>
+    <!-- includes header partial -->
+    <% include Partials/header.ejs %>
+    <div class="content">
+        <div class="oneThree">
+            <div class="containerThree">
+                <div class="buttons">
+                    <form method="POST" action="/Yes">
+                        <input value= "<%=qs.id%>" type= "hidden" name="Yes" class="btn btn-primary"/>
+                        <input type= "submit" value= "Yes" class="btn btn-success"/>
+                    </form>  
+                    <form method="POST" action="/Maybe">
+                        <input value= "<%=qs.id %>" type= "hidden" name="Maybe" class="btn btn-primary"/>
+                        <input value= "Maybe" type= "submit" class="btn btn-primary"/>
+                    </form>
+                    <form method="POST" action="/No">
+                        <input value= "<%=qs.id %>" type= "hidden" name="No" class="btn btn-primary"/>
+                        <input value= "No" type= "submit" class="btn btn-danger"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     <!-- includes footer partial -->
+    <% include Partials/footer.ejs %>
+</body>
+
+</html>
